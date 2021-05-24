@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <header>
+      <div class="title">
+        <h1><a href="{{ .RelPermalink }}">{{i18n "galleries" .Title }}</a></h1>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </header>
+    {{ $files := readDir "." }}
+    <div id="content">
+    {{ $gallery := .Paginate (where .Data.Pages "IsPage" true) }}
+    {{ range $gallery.Pages }}
+      {{ $link := .Permalink }}
+      {{ $title := .Title }}
+      {{ with .Resources.ByType "image" }}
+        {{ range first 1 (shuffle . )}}
+      <a href="{{ $link }}">
+        <figure>
+          <img src="{{ .RelPermalink }}" alt="{{ $title }}" width="400">
+          <figcaption>{{ $title }}</figcaption>
+        </figure>
+      </a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    </div>
+{{ end }}

@@ -1,0 +1,14 @@
+*~
+*.bak
+*.orig
+*.pyc
+.env
+TODO.org
+public
+resources
+.vscode
+content/about
+content/news
+node_modules
+__pycache__
+app/var.py
