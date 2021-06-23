@@ -55,7 +55,7 @@ class GraphcmsManager(object):
     def __query_statement(self):
         return '''\
         {
-          jpecPosts(locales: [ja, en], orderBy: updatedAt_DESC) {
+          posts(locales: [ja, en], orderBy: updatedAt_DESC) {
             localizations(includeCurrent: true) {
               locale
               id
@@ -73,22 +73,8 @@ class GraphcmsManager(object):
               japanese
               updatedAt
             }
-            category {
-              localizations(includeCurrent: true) {
-                locale
-                title
-              }
-            }
-            tag {
-              ... on JpecTag {
-                localizations(includeCurrent: true) {
-                  locale
-                  title
-                }
-              }
-            }
           }
-          jpecPages(locales: [ja, en]) {
+          pages(locales: [ja, en]) {
             localizations(includeCurrent: true) {
               locale
               id
@@ -112,20 +98,20 @@ class GraphcmsManager(object):
         data = (payload.get('data'))
         for model, content_list in data.items():
             locale = 'en'
-            if model == 'jpecPosts':
+            if model == 'posts':
                 for content in content_list:
-                    # generate category_map
-                    category = content.get('category')
-                    category_map = dict((x['locale'], x['title']) for x in category.get('localizations')) if category else {}
-                    # generate tags_map
-                    tags = content.get('tag')
-                    tags_map = {}
-                    if tags:
-                        for tag in tags:
-                            for x in tag.get('localizations'):
-                                tag_list = tags_map.get(x['locale'], [])
-                                tag_list.append(x['title'])
-                                tags_map[x['locale']] = tag_list
+                    # # generate category_map
+                    # category = content.get('category')
+                    # category_map = dict((x['locale'], x['title']) for x in category.get('localizations')) if category else {}
+                    # # generate tags_map
+                    # tags = content.get('tag')
+                    # tags_map = {}
+                    # if tags:
+                    #     for tag in tags:
+                    #         for x in tag.get('localizations'):
+                    #             tag_list = tags_map.get(x['locale'], [])
+                    #             tag_list.append(x['title'])
+                    #             tags_map[x['locale']] = tag_list
                     # parse
                     for x in content.get('localizations'):
                         data_map = dict()
@@ -136,12 +122,12 @@ class GraphcmsManager(object):
                         front_matter = f'title: "{x["title"]}"\n'
                         front_matter += f'slug: "{x["slug"]}"\n'
                         front_matter += f'date: {x["date"]}\n'
-                        if category_map:
-                            front_matter += f'categories: "{category_map[locale]}"\n'
-                        if tags_map:
-                            front_matter += 'tags:\n'
-                            for y in tags_map.get(locale):
-                                front_matter += f'  - \"{y}\"\n'
+                        # if category_map:
+                        #     front_matter += f'categories: "{category_map[locale]}"\n'
+                        # if tags_map:
+                        #     front_matter += 'tags:\n'
+                        #     for y in tags_map.get(locale):
+                        #         front_matter += f'  - \"{y}\"\n'
                         image = x.get('image')
                         if image:
                             # add save image action in here
@@ -162,7 +148,7 @@ class GraphcmsManager(object):
                     data_map['body'] = ''
                     data_map['update_sec'] = 0
                     result.append(data_map)
-            elif model == 'jpecPages':
+            elif model == 'pages':
                 for content in content_list:
                     for x in content.get('localizations'):
                         data_map = dict()
