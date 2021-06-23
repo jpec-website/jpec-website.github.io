@@ -69,7 +69,7 @@ make run
 * `GRAPHCMS_ENDPOINT`: ダッシュボード>`Settings`>`Endpoints`
 * `GRAPHCMS_TOKEN`
   * `Permanent Auth Tokens`にて以下を設定して`Create`
-    * `Name`: 適当な名前
+    * `Name`: jpec-website
     * `Content from stage Published`: チェック
 
 #### コンテンツの取得
@@ -83,7 +83,7 @@ make run
 Github管理画面のダッシュボードでレポジトリ作成後
 
 ```shell
-git remote add origin git@github.com:toyoakekaki/hugo-future-imperfect-slim.git
+git remote add origin git@github.com:jpec-website/hugo-future-imperfect-slim.git
 git add .
 git commit -m 'first commit'
 git branch -M main
@@ -102,7 +102,7 @@ Gihub Actionsの設定
 Webhookの設定
 
 * ダッシュボード>右上のユーザアイコン>`Settings`>`Developper Settings`>`Personal accesss tokens`>`Generate new token`
-  * `Note`: 適当な名前
+  * `Note`: jpec2012.jp
   * `Select scopes`: 一番上の`repo`にチェック
 
 [Rest Client for VS Code](./test.http)で確認できる
@@ -112,8 +112,8 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 
 * ダッシュボード>`Webhooks`>`Create`
 * 以下を設定
-  * Name: toyoakekaki/hugo-jpec2012
-  * Description: toyoakekaki/hugo-jpec2012
+  * Name: jpec-website/hugo-jpec2012
+  * Description: jpec-website/hugo-jpec2012
   * Include payload: Off
   * Url: <中継サーバのエンドポイント>
   * Triggers

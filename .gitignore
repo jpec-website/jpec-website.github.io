@@ -12,3 +12,4 @@ content/news
 node_modules
 __pycache__
 app/var.py
+workspace.code-workspace
