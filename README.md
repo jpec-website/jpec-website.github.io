@@ -123,6 +123,10 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 
 <b id="f1">(1)</b> Github ActionsのWebhookではpayloadにevent_typeが必須だがGraphcmsでは設定できない(2021/5/6)  [↩](#a1)
 
+## ワークフロー
+
+![work-flow](./work-flow.svg)
+
 ## デザイン
 
 ### 基本のテンプレート
