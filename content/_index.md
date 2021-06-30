@@ -1,5 +1,5 @@
 ---
-title: "ほーむ"
-layout: "about"
+title: "ホーム"
+layout: "simple"
 ---
-ほーむボディ
+トップページ

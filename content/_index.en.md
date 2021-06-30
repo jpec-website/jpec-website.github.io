@@ -1,5 +1,5 @@
 ---
-title: "HOME"
-layout: "about"
+title: "home"
+layout: "simple"
 ---
-home body
+not ready
