@@ -4,11 +4,13 @@
 
 {{ $image := (.Page.Resources.ByType "image") }}
 {{ with $image }}
+
     {{ range . }}
     {{ $resized := .Fill "150x115 q20" }}
     <a href="{{ .Permalink }}" data-lightbox="x"><img src="{{ $resized.Permalink }}" /></a>
     {{ end }}
 {{ end }}
 
-<br />
-<a href="..">{{ i18n "back_to_list" }}</a>
+<p>
+  <a href=".." class="button">{{ i18n "back_to_list" }}</a>
+</p>

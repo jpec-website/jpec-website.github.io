@@ -9,6 +9,7 @@ resources
 .vscode
 content/about
 content/news
+content/_index*.md
 node_modules
 __pycache__
 app/var.py

@@ -1,7 +1,5 @@
-+++
-title = "Contact"
-layout = "contact"
-netlify = false
-emailservice = "https://formspree.io/f/mayayrzv"
-contactanswertime = 24
-+++
+---
+title: "Contact"
+description: Please wait for a while later as we reply it.
+layout: contact
+---

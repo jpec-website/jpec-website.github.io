@@ -1,7 +1,5 @@
-+++
-title = "お問い合わせ"
-layout = "contact"
-netlify = false
-emailservice = "https://formspree.io/f/mayayrzv"
-contactanswertime = 24
-+++
+---
+title: "お問い合わせ"
+description: 後ほど担当より回答させていただきますのでしばらくお待ちください。
+layout: contact
+---

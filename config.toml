@@ -5,7 +5,7 @@ baseurl = ""
 DefaultContentLanguage  = "ja"
 title = "Japan Plant Export Council"
 theme = "future-imperfect-slim"
-paginate = 3
+paginate = 10
 disqusShortname = ""
 googleAnalytics = ""
 pluralizeListTitles = false
@@ -28,6 +28,7 @@ summaryLength = 120 # サマリーの長さを120単語にする
   highlightjsTheme = ""
   highlightjsLang = []
   viewMorePostsLink = "/news/"
+  viewMoreGalleriesLink = "/galleries/"
   readingTime = false
   imageStretch = ""
   removeBlur = false
@@ -99,6 +100,9 @@ summaryLength = 120 # サマリーの長さを120単語にする
     [params.staticman.recaptcha]
       siteKey   = ""
       encryptedKey  = ""
+
+  [params.contact]
+    url = "https://jpec2012.sakura.ne.jp/webapps2/contact/en/"
 
 [menu]
 
@@ -193,6 +197,9 @@ summaryLength = 120 # サマリーの長さを120単語にする
       categoriesByCount = true
       facebook = true
       instagram = false
+
+    [Languages.ja.params.contact]
+      url = "https://jpec2012.sakura.ne.jp/webapps2/contact/"
 
     [[Languages.ja.menu.main]]
       name = "ホーム"

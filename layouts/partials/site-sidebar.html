@@ -7,6 +7,7 @@
     </section>
   {{ end }}
 
+  {{ if not .IsHome }}
   {{ $section := "news" }}{{ if eq .Section "galleries" }}{{ $section = .Section }}{{ end }}
     <section id="recent-posts">
       <header>
@@ -14,7 +15,19 @@
       </header>
       {{ range first (.Site.Params.sidebar.postAmount | default 5) (where site.RegularPages "Type" $section) }}
       <article class="mini-post">
-          {{ .Render "featured" }}
+          {{ if eq .Section "galleries" }}
+            {{- $image_list := (.Page.Resources.ByType "image") -}}
+            {{- $image := index $image_list 0 -}}
+            {{- $alt := .Title -}}
+            {{- $stretch := .Site.Params.imageStretch -}}
+            {{ if $image }}
+              <a href="{{ .Page.RelPermalink }}" class="image"{{ if not (.Params.removeBlur | default .Site.Params.removeBlur) }} style="--bg-image: url('{{ $image.Permalink }}');"{{ end }}>
+              <img {{ with $stretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ else if or (eq (lower .) "cover") (eq (lower .) "c") }}cover{{ end }}" {{ end }}src="{{ $image.Permalink  }}" alt="{{ $alt }}">
+            </a>
+            {{ end }}
+          {{ else }}
+            {{ .Render "featured" }}
+          {{ end }}
         <header>
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           <time class="published" datetime="{{ .Date }}">{{ .Render "date" }}</time>
@@ -23,7 +36,11 @@
       {{ end }}
       {{ if ge (len (where site.RegularPages "Type" $section)) (.Site.Params.sidebar.postAmount | default 5) }}
         <footer>
+          {{ if eq .Section "news" }}
           <a href="{{ ( .Site.Params.viewMorePostsLink | default $section) | relLangURL }}" class="button">{{ i18n "see_more" }}</a>
+          {{ else }}
+          <a href="{{ ( .Site.Params.viewMoreGalleriesLink | default $section) | relLangURL }}" class="button">{{ i18n "see_more" }}</a>
+          {{ end }}
         </footer>
       {{ end }}
     </section>
@@ -45,6 +62,7 @@
         </ul>
       </section>
     {{ end }}
+  {{ end }}
   {{ end }}
 
   {{ if .Site.Params.sidebar.about }}
