@@ -1,6 +1,6 @@
 ---
 title: "Photo Galleries"
-description: "Photo Galleries of past events.\nPlease click to see more."
+description: "Photo galleries of the past events.\nPlease click to see more."
 headless: true
 ---
 
