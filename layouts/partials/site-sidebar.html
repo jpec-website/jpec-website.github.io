@@ -47,7 +47,6 @@
 
   {{ if .Site.Params.sidebar.categories }}
     {{ if ne ($.Scratch.Get "showCategories") false }}
-
       <section id="categories">
         <header>
           <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" (len .Site.Taxonomies.categories) }}</a></h1>
@@ -65,6 +64,19 @@
   {{ end }}
   {{ end }}
 
+  {{ if .Site.Params.sidebar.ec }}
+    <section id="mini-bio">
+      <header>
+        <h1>{{ i18n "e-commerce" }}</h1>
+      </header>
+      <footer>
+        <a href="{{ .Site.Params.sidebar.ec.url | absURL }}">
+          <img src="{{ .Site.Params.sidebar.ec.src }}" alt="{{ .Site.Params.sidebar.ec.src }}" >
+        </a>
+      </footer>
+    </section>
+  {{ end }}
+
   {{ if .Site.Params.sidebar.about }}
     <section id="mini-bio">
       <header>
@@ -76,4 +88,5 @@
       </footer>
     </section>
   {{ end }}
+
 </section>

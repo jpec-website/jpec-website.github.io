@@ -75,7 +75,12 @@ summaryLength = 120 # サマリーの長さを120単語にする
     categories = false
     categoriesByCount = true
     facebook = true
-    instagram = false
+    instagram = true
+
+    [params.sidebar.ec]
+      src = "/img/ec-site.jpg"
+      url = "https://im2.toyoake.jp/jpec/"
+      alt = "jpec2012"
 
   [params.footer]
     rssFooter = true
@@ -127,6 +132,20 @@ summaryLength = 120 # サマリーの長さを120単語にする
     pre   = "<i class='far fa-newspaper'></i>"
     weight = 3
 
+  [[menu.main]]
+    name = "Galleries"
+    identifier= "galleries"
+    url = "/galleries/"
+    pre = "<i class='fas fa-images'></i>"
+    weight = 4
+
+  [[menu.main]]
+    name = "Instagram"
+    identifier= "instagram"
+    url = "/instagram/"
+    pre = "<i class='fa fa-image'></i>"
+    weight = 5
+
   #[[menu.main]]
   #  name = "Categories"
   #  identifier= "categories"
@@ -142,18 +161,11 @@ summaryLength = 120 # サマリーの長さを120単語にする
   #  weight = 6
 
   [[menu.main]]
-    name = "Galleries"
-    identifier= "galleries"
-    url = "/galleries/"
-    pre = "<i class='fas fa-images'></i>"
-    weight = 4
-
-  [[menu.main]]
     name = "Contact"
     identifier= "contact"
     url = "/contact/"
     pre = "<i class='far fa-envelope'></i>"
-    weight = 7
+    weight = 8
 
 [Languages]
 
@@ -196,7 +208,12 @@ summaryLength = 120 # サマリーの長さを120単語にする
       categories = false
       categoriesByCount = true
       facebook = true
-      instagram = false
+      instagram = true
+
+      [Languages.ja.params.sidebar.ec]
+        src = "/img/ec-site.jpg"
+        url = "https://im2.toyoake.jp/jpec/"
+        alt = "jpec2012"
 
     [Languages.ja.params.contact]
       url = "https://jpec2012.sakura.ne.jp/webapps2/contact/"
@@ -222,20 +239,6 @@ summaryLength = 120 # サマリーの長さを120単語にする
       pre = "<i class='far fa-newspaper'></i>"
       weight  = 3
 
-    #[[Languages.ja.menu.main]]
-    #  name = "カテゴリー"
-    #  identifier = "categories"
-    #  url = "/categories/"
-    #  pre = "<i class='fas fa-sitemap'></i>"
-    #  weight  = 5
-    #
-    #[[Languages.ja.menu.main]]
-    #  name = "タグ"
-    #  identifier = "tags"
-    #  url = "/tags/"
-    #  pre = "<i class='fas fa-tags'></i>"
-    #  weight = 6
-
     [[Languages.ja.menu.main]]
       name = "フォトギャラリー"
       identifier= "galleries"
@@ -244,11 +247,32 @@ summaryLength = 120 # サマリーの長さを120単語にする
       weight = 4
 
     [[Languages.ja.menu.main]]
+      name = "インスタグラム"
+      identifier= "instagram"
+      url = "/instagram/"
+      pre = "<i class='fa fa-image'></i>"
+      weight = 5
+
+    #[[Languages.ja.menu.main]]
+    #  name = "カテゴリー"
+    #  identifier = "categories"
+    #  url = "/categories/"
+    #  pre = "<i class='fas fa-sitemap'></i>"
+    #  weight  = 6
+    #
+    #[[Languages.ja.menu.main]]
+    #  name = "タグ"
+    #  identifier = "tags"
+    #  url = "/tags/"
+    #  pre = "<i class='fas fa-tags'></i>"
+    #  weight = 7
+
+    [[Languages.ja.menu.main]]
       name = "お問い合わせ"
       identifier = "contact"
       url = "/contact/"
       pre = "<i class='far fa-envelope'></i>"
-      weight = 7
+      weight = 8
 
   #[Languages.zh-CN]
   #  LanguageCode = "zh-CN"
