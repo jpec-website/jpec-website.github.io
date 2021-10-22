@@ -62,13 +62,13 @@ class GraphcmsManager(object):
               slug
               date
               title
-              body 
+              body
               image {
                 url
                 fileName
                 mimeType
               }
-              japanese
+              invalidLocale
               updatedAt
             }
           }
@@ -77,7 +77,7 @@ class GraphcmsManager(object):
               locale
               id
               title
-              body 
+              body
               path
               layout
               updatedAt
@@ -93,7 +93,7 @@ class GraphcmsManager(object):
         result = list()
         data = (payload.get('data'))
         for model, content_list in data.items():
-            locale = 'en'
+            # locale = 'en'
             if model == 'posts':
                 for content in content_list:
                     # # generate category_map
@@ -112,8 +112,11 @@ class GraphcmsManager(object):
                     for x in content.get('localizations'):
                         data_map = dict()
                         locale = x['locale']
-                        # skip japanese only post
-                        if locale == 'en' and x['japanese']:
+                        # skip invalid locale
+                        # if locale == 'en' and x['japanese']:
+                        #    continue
+                        if locale == x.get('invalidLocale'):
+                            print(f'Skip language code {locale} for content {x["id"]}')
                             continue
                         front_matter = f'title: "{x["title"]}"\n'
                         front_matter += f'slug: "{x["slug"]}"\n'

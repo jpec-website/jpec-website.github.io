@@ -189,3 +189,4 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 * [Hugo のレイアウトの仕組み \- Marbles Day](https://marbles.hatenablog.com/entry/2020/11/22/204751)
 * [タクソノミー関連のテンプレートを定義する \| まくまくHugo/Goノート](https://maku77.github.io/hugo/taxonomy/template.html)
 * [各種ページにおいて \.Kind や \.IsPage、\.IsSection、\.IsNode の値がどうなるかの一覧 \| まくまくHugo/Goノート](https://maku77.github.io/hugo/template/page-types.html)
+* [インスタグラム投稿の埋め込み方法と使用時の注意点 \| SEO研究所サクラサクラボ](https://www.sakurasaku-labo.jp/blogs/instagram-seo#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%82%B0%E3%83%A9%E3%83%A0%E6%8A%95%E7%A8%BF%E3%81%AE%E5%85%AC%E5%BC%8F%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E6%96%B9%E6%B3%95)
