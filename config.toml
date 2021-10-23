@@ -38,6 +38,12 @@ summaryLength = 120 # サマリーの長さを120単語にする
   # mainSections = ["news", "galleries"] # Recent Posts in sitebar
   mainSections = ["news"] # Recent Posts in sitebar
   highlightColor = "red" # link color
+  slider = [
+    "/img/slide/IMG_6378.jpg",
+    "/img/slide/IMG_6382.jpg",
+    "/img/slide/IMG_6458.jpg",
+    "/img/slide/IMG_6645.jpg"
+  ]
 
   [params.meta]
     description = "A theme by HTML5 UP, ported by Julio Pescador. Slimmed and enhanced by Patrick Collins. Multilingual by StatnMap. Powered by Hugo."

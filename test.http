@@ -14,5 +14,5 @@ Accept: application/json
 Authorization: Bearer {{$dotenv GRAPHCMS_TOKEN}}
 
 {
-  "query": "{jpecPosts {id title image{url fileName mimeType} body{markdown html}} jpecPages {id title body{markdown html}}}"
+  "query": "{posts {id title image{url fileName mimeType} body } pages {id title body }}"
 }

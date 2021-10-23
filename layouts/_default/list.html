@@ -1,8 +1,34 @@
 {{ define "main" }}
   {{ if .IsHome }}
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+        {{- range $link := site.Params.slider -}}
+           <div class="swiper-slide"><img src="{{ $link | safeHTML }}"></div>
+        {{- end -}}
+        </div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+      　loop: true,
+        // direction:'vertical',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+        slidesPerView: 1.5,
+        centeredSlides: true,
+      });
+    </script>
   <article class="post">
     <header>
-          <img src="https://picsum.photos/id/163/1200/400" />
+<!--      <img src="https://picsum.photos/id/163/1200/400" /> -->
     </header>
     <div id="content">
       {{ .Content }}
