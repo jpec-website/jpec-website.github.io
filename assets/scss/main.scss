@@ -20,6 +20,11 @@
    Variables
    ========================================================================== */
 
+/* Custome Color */
+$dark-pink: #a70034;
+$pink: #f85979;
+$light-pink: #fddfe2;
+
 /* Font */
 
 $header-font: "Raleway", Helvetica, sans-serif;
@@ -27,8 +32,10 @@ $body-font: "Source Sans Pro", Helvetica, sans-serif;
 $code-font: "Courier New", monospace;
 $fa-free-font: "Font Awesome 5 Free";
 $fa-brands-font: "Font Awesome 5 Brands";
-$header-color: 	hsl(0, 1%, 23%);
-$accent-color: 	hsl(175, 60%, 45%);
+//$header-color: 	hsl(0, 1%, 23%);
+$header-color: $dark-pink;
+//$accent-color: 	hsl(175, 60%, 45%);
+$accent-color: $pink;
 $accent-hover: hsla(175, 60%, 45%, 0.25);
 $warning-color: hsl(332, 60%, 45%);
 $warning-hover: hsla(332, 60%, 45%, 0.25);
@@ -38,20 +45,18 @@ $utility-white: hsl(0, 0%, 96%);
 
 /* Background & Border */
 
-//$white: hsl(0, 0%, 100%);
-$white: #fddfe2;;
+$white: hsl(0, 0%, 100%);
+//$white: #fddfe2;;
 $black: hsl(0, 0%, 0%);
-$border-color: hsla(0, 0%, 63%, 0.3);
+//$border-color: hsla(0, 0%, 63%, 0.3);
+$border-color: $pink;
 $input-color: hsla(0, 0%, 63%, 0.07);
 $active-color: hsla(175, 60%, 45%, 0.05);
 $primary-border: 1px solid $border-color;
-$secondary-border: 1px dotted hsla(0, 0%, 63%, 0.7);
+//$secondary-border: 1px dotted hsla(0, 0%, 63%, 0.7);
+$secondary-border: 1px solid $light-pink;
 $cellborder-color: hsl(0, 0%, 88%);
 $headerbg-color: hsl(0, 0%, 93%);
-// custome color
-$dark-pink: #a70034;
-$pink: #f85979;
-$light-pink: #fddfe2;
 
 /* Other */
 
@@ -390,7 +395,8 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 .button {
-  background-color: transparent;
+  // background-color: transparent;
+  background-color: $white;
   border: $primary-border;
   color: $header-color;
   cursor: pointer;
@@ -620,12 +626,12 @@ figcaption {
    ========================================================================== */
 
 .post {
-  background:	$white;
+  background:	$light-pink;
   margin: 1.5em auto;
   padding: 1em;
   max-width: 55em;
   > header {
-    border-bottom: $primary-border;
+    // border-bottom: $primary-border;
     margin: -1em -1em 0 -1em;
     text-align: center;
     @include prefix(word-break, break-word, ms);
@@ -716,7 +722,7 @@ figcaption {
   justify-content: center;
   width: 100%;
   @include for-laptop-up {
-    border-left: $primary-border;
+    // border-left: $primary-border;
     text-align: right;
     width: 25%;
   }
@@ -881,7 +887,7 @@ figcaption {
 }
 
 .flyout-menu {
-  background-color: $white;
+  background-color: $light-pink; // add
   border-left: $primary-border;
   height: 100%;
   margin-top: 3.5em;
@@ -985,7 +991,7 @@ figcaption {
 }
 
 .search-input {
-  background-color: $white;
+  background-color: $light-pink;
   box-shadow: $shadow-3;
   height: 0px;
   opacity: 0;
@@ -1051,7 +1057,7 @@ figcaption {
 }
 
 .mini-post {
-  background: $white;
+  background: $light-pink;
   border: $primary-border;
   @include display-flex;
   flex-direction: column;
@@ -1114,6 +1120,7 @@ figcaption {
     a {
       opacity: 0.6;
       border: none;
+      color: $white; // add
     }
   }
 }
@@ -1123,7 +1130,7 @@ figcaption {
    ========================================================================== */
 
 #site-header {
-  background-color: $white;
+  background-color: $light-pink;
   border-bottom: $primary-border;
   box-shadow: $shadow-2;
   height: 3.5em;
@@ -1140,6 +1147,9 @@ figcaption {
   @include display-flex;
   justify-content: space-between;
   .flyout-menu {
+    font-weight: bold;
+    // font-size: 1.2rem;
+    background-color: $dark-pink;
     right: -177px;
     width: 177px;
     @include for-desktop-up {
@@ -1194,6 +1204,7 @@ figcaption {
 
 #lang-menu {
   &.flyout-menu {
+    background-color: $dark-pink; // add
     right: -177px;
     width: 177px;
     a {
@@ -1264,15 +1275,19 @@ figcaption {
     h1 {
       font-size: 1.25em;
       margin-bottom: 0;
+      color: $white; // add
     }
   }
   main {
     p {
-      font-size: 0.7em;
+      // font-size: 0.7em;
+      font-size: 0.8em;
       letter-spacing: 0.25em;
       line-height: 2.5;
       margin-bottom: 0;
-      text-transform: uppercase;
+      // text-transform: uppercase;
+      font-weight: bold; // add
+      color: $white; // add
     }
   }
 }
@@ -1283,7 +1298,8 @@ figcaption {
     font-size: 1em;
   }
   > * {
-    border-top: $primary-border;
+    // border-top: $primary-border;
+    border-top: $secondary-border;
     margin: 3em 2em 0 2em;
     padding-top: 3em;
   }
@@ -1318,13 +1334,18 @@ figcaption {
     -webkit-box-flex: 1;
     @include prefix(flex, 1 1 100%, (ms, webkit));
   }
+  h1 {color: $white;} // add
 }
 
 #mini-bio {
+  h1 { color: $white;} // add
   p {
     opacity: 0.65;
-    font-size: 0.9em;
+    // font-size: 0.9em;
+    font-size: 0.8em;
+    font-weight: bold;
     padding: 0;
+    color: $white; // add
   }
 }
 
@@ -1577,17 +1598,17 @@ figcaption {
   border-radius: 4px;
   box-shadow: $shadow-1;
   letter-spacing: 0;
-  color: $white;
+  color: $light-pink;
   text-align: center;
   transition: background-color $hover;
   &:active {
     position: relative;
     top: 2px;
     box-shadow: none;
-    color: darken($white, 10%);
+    color: darken($light-pink, 10%);
   }
   &:hover {
-    color: $white;
+    color: $light-pink;
   }
 }
 
@@ -1799,12 +1820,12 @@ body {
   background: $pink;
 }
 #site-header {
-  color: $white;
+  color: $light-pink;
   background-color: $dark-pink;
 }
 //#wrapper {
 //  background: $light-pink;
 //}
 .nav-title {
-  color: $white;
+  color: $light-pink;
 }

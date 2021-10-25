@@ -1,8 +1,8 @@
 {{ define "main" }}
   {{ if .IsHome }}
   {{ if .Site.Params.slider }}
-  {{- $image_dir := "img/slide" -}}
-  {{- $slide_dir := printf "static/%s" $image_dir -}}
+  {{- $image_dir := .Site.Params.slider -}}
+  {{- $slide_dir := printf "static%s" $image_dir -}}
   <header>
     <div class="swiper-container">
       <div class="swiper-wrapper">
