@@ -413,7 +413,7 @@ input[type="button"],
   padding: 0 2em;
   transition: background-color $hover, border $hover, color $hover;
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase; // 2021/10/28
   width: fit-content;
   &:hover {
     border: 1px solid $accent-color;
@@ -719,7 +719,7 @@ figcaption {
   font-family: $header-font;
   font-size: 0.6em;
   letter-spacing: 0.25em;
-  text-transform: uppercase;
+  // text-transform: uppercase; // 2021/10/28
   flex-direction: column;
   justify-content: center;
   width: 100%;
@@ -773,7 +773,7 @@ figcaption {
       font-size: 0.6em;
       font-weight: 400;
       letter-spacing: 0.25em;
-      text-transform: uppercase;
+      // text-transform: uppercase; // 2021/10/28
       &:not(:first-child) {
         margin-left: 1em;
       }
@@ -885,7 +885,7 @@ figcaption {
   letter-spacing: 0.25em;
   margin: 0;
   padding: 0 1.5em;
-  text-transform: uppercase;
+  // text-transform: uppercase; // 2021/10/28
 }
 
 .flyout-menu {
@@ -1089,7 +1089,7 @@ figcaption {
       font-family: $header-font;
       font-size: 0.6em;
       letter-spacing: 0.25em;
-      text-transform: uppercase;
+      // text-transform: uppercase; // 2021/10/28
     }
   }
   .image {
@@ -1230,6 +1230,10 @@ figcaption {
     }
   }
 }
+.lang-toggle { // add
+  font-size: .9rem;
+  text-transform: uppercase;
+}
 
 #share-menu {
   @include display-flex;
@@ -1318,7 +1322,7 @@ figcaption {
       font-size: 0.9em;
       letter-spacing: 0.25em;
       line-height: 1.65;
-      text-transform: uppercase;
+      // text-transform: uppercase; // 2021/10/28
       list-style: none;
       padding: 0;
     }
