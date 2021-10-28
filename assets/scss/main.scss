@@ -493,14 +493,16 @@ table {
   > tbody {
     > tr {
       border-bottom: 1px solid $utility-white;
-      text-align: center;
+      // text-align: center;
+      text-align: left;
       transition: $hover;
       @include for-laptop-up {
         &:nth-child(even) {
           background-color: $utility-white;
         }
         &:hover {
-          background-color: $accent-hover;
+          // background-color: $accent-hover;
+          background-color: $light-pink;
         }
       }
       > td {
@@ -525,7 +527,8 @@ table {
           text-align: left;
           @include for-laptop-up {
             background-color: unset;
-            text-align: center;
+            // text-align: center;
+            text-align: left; // add
           }
           &::after {
             content: "\f078";
@@ -550,7 +553,8 @@ table {
             border: 0;
             opacity: 1;
             position: relative;
-            text-align: center;
+            // text-align: center;
+            text-align: left; // add
             z-index: 0;
           }
         }
