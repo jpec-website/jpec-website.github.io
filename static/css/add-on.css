@@ -13,10 +13,51 @@ ul.gallery {
 }
 ul.gallery li {
   float: left;
-  width: 400px;
   text-align: center;
 }
 .clearLeft {
   clear: left;
 }
 /* end of photo gallery */
+
+
+/* swiper */
+.swiper-container{
+  width: 600px;
+  height: 200px;
+  margin-top: 25px;
+}
+
+@media (min-width: 320px) {
+  .swiper-container{
+  width: 300px;
+  }
+}
+@media (min-width: 480px) {
+  .swiper-container{
+  width: 440px;
+  }
+}
+@media (min-width: 768px) {
+  .swiper-container{
+  width: 600px;
+  }
+}
+@media (min-width: 980px) {
+  .swiper-container{
+    width: 800px;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: pink;
+}
+.swiper-slide{
+    opacity: 0.6;
+}
+.swiper-slide-active{
+    opacity: 1;
+}
+
+/* end of swiper */

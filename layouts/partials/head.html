@@ -20,6 +20,7 @@
 
   {{- if .Site.Params.enableCDN -}}
     {{- if .Site.Params.highlightjs -}}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">{{- end -}}
+    {{if .Site.Params.slider }}{{ if .IsHome }}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">{{ end }}{{ end }}
     {{- range .Site.Params.cssFiles -}}
       {{- if eq . "default" -}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -67,9 +68,6 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
-  {{if .Site.Params.slider }}{{ if .IsHome }}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
-  {{ end }}{{ end }}
 
   {{- .Scratch.Set "Permalink" .Permalink -}}
   {{- .Scratch.Set "Title" .Title -}}
