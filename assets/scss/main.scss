@@ -27,7 +27,8 @@ $light-pink: #fddfe2;
 
 /* Font */
 
-$header-font: "Raleway", Helvetica, sans-serif;
+// $header-font: "Raleway", Helvetica, sans-serif;
+$header-font: "Source Sans Pro", Helvetica, sans-serif; // update 2021/10/28
 $body-font: "Source Sans Pro", Helvetica, sans-serif;
 $code-font: "Courier New", monospace;
 $fa-free-font: "Font Awesome 5 Free";
@@ -286,7 +287,8 @@ textarea {
    ========================================================================== */
 
 body {
-  background: $utility-white;
+  // background: $utility-white;
+  background: $pink;;
   margin-top: 3.5em;
   max-width: 100vw;
   -ms-overflow-style: scrollbar;
@@ -332,7 +334,7 @@ h6 {
   font-family: $header-font;
   letter-spacing: 0.25em;
   line-height: 1.65;
-  text-transform: uppercase;
+  // text-transform: uppercase; // comment out 2021/10/28
   a {
     border-bottom: 0;
   }
@@ -931,6 +933,7 @@ figcaption {
 }
 
 .nav-title {
+  color: $light-pink;
   align-items: center;
   @include display-flex;
   flex-grow: 1;
@@ -1099,13 +1102,14 @@ figcaption {
 }
 
 .copyright {
-  color: $utility-gray;
+  // color: $utility-gray;
+  color: $white; // 2021/10/28
   font-family: $header-font;
   font-size: 0.5em;
   font-weight: 400;
   letter-spacing: 0.25em;
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase; // 2021/10/28
 }
 
 .socnet-icons {
@@ -1130,7 +1134,8 @@ figcaption {
    ========================================================================== */
 
 #site-header {
-  background-color: $light-pink;
+  color: $light-pink;
+  background-color: $dark-pink;
   border-bottom: $primary-border;
   box-shadow: $shadow-2;
   height: 3.5em;
@@ -1815,17 +1820,4 @@ figcaption {
   h3 {
     page-break-after: avoid;
   }
-}
-body {
-  background: $pink;
-}
-#site-header {
-  color: $light-pink;
-  background-color: $dark-pink;
-}
-//#wrapper {
-//  background: $light-pink;
-//}
-.nav-title {
-  color: $light-pink;
 }
