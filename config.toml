@@ -58,7 +58,8 @@ summaryLength = 120 # サマリーの長さを120単語にする
 
   [params.intro]
     header = "Japan Plant Export Council"
-    paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    #paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    paragraph = "We introduce Japanese plants all over the world."
     rssIntro = true
     socialIntro = true
     hideWhenSingleColumn = false
@@ -71,7 +72,8 @@ summaryLength = 120 # サマリーの長さを120単語にする
       alt = "jpec2012"
 
   [params.sidebar]
-    about = "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    #about = "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    about = "Japan Plant Export Council (JPEC)"
     postAmount = 5
     categories = false
     categoriesByCount = true
