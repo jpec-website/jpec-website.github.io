@@ -129,15 +129,13 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
     * `Custom domain`: jpec2012.jp
     * `Enforce HTTPS`にチェック(すぐにできない場合はGithub側のチェックを待つ)
 
-[スクリーンショット]
-
-![Github pages](./images/screenshot/github-pages.png)
+[スクリーンショット](./images/screenshot/github-pages.png)
 
 ##### DNS(さくらインターネット)側の設定
 
-サーバコントロールパネル ホーム>左サイドバードメイン/SSl>ネームサーバ設定>ゾーン>編集
+サーバコントロールパネル ホーム>左サイドバー>ドメイン/SSl>ネームサーバ設定>ゾーン>編集
 
-###### 変更前
+###### ゾーン情報変更前
 
 | エントリー        | タイプ | データ         | TTL |
 | ----------------- | ------ | -------------- | --- |
@@ -149,7 +147,7 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 | mail              | CNAME  | @              | -   |
 | ftp               | CNAME  | @              | -   |
 
-確認
+digで確認
 
 ```shell
 dig jpec2012.jp +noall +answer -t A
@@ -157,7 +155,7 @@ dig jpec2012.jp +noall +answer -t A
 jpec2012.jp.		105	IN	A	49.212.235.158
 ```
 
-##### 変更後
+###### ゾーン情報変更後
 
 | エントリー        | タイプ | データ          | TTL |
 | ----------------- | ------ | --------------  | --- |
@@ -183,9 +181,7 @@ jpec2012.jp.		3600	IN	A	185.199.111.153
 jpec2012.jp.		3600	IN	A	185.199.110.153
 ```
 
-[スクリーンショット]
-
-![さくらインターネットドメインゾーン設定](./images/screenshot/sakura-zone-info.png)
+[スクリーンショット](./images/screenshot/sakura-zone-info.png)
 
 ## ワークフロー
 
