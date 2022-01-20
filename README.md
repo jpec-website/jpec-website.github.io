@@ -53,7 +53,7 @@ title = "My New Hugo Site"
 theme = "future-imperfect-slim"
 ```
 
-> github pagesやnetlifyで使う場合はbaseURLのプロトコルはhttpsにすること
+> Github PagesやNetlifyで使う場合はbaseURLのプロトコルはhttpsにすること
 
 起動確認(http://localhost:1313)
 
@@ -123,13 +123,13 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 
 <b id="f1">(1)</b> Github ActionsのWebhookではpayloadにevent_typeが必須だがGraphcmsでは設定できない(2021/5/6)  [↩](#a1)
 
-#### Github pages
+#### Github Pages
 
 * ダッシュボード>`Settings`>`Pages`
     * `Custom domain`: jpec2012.jp
     * `Enforce HTTPS`にチェック(すぐにできない場合はGithub側のチェックを待つ)
 
-[スクリーンショット](./images/screenshot/github-pages.png)
+[スクリーンショットで確認](./images/screenshot/github-pages.png)
 
 ##### DNS(さくらインターネット)側の設定
 
@@ -170,6 +170,8 @@ jpec2012.jp.		105	IN	A	49.212.235.158
 | mail              | CNAME  | @               | -   |
 | ftp               | CNAME  | @               | -   |
 
+[スクリーンショットで確認](./images/screenshot/sakura-zone-info.png)
+
 変更が反映するのにしばらく時間を要する。
 
 ```shell
@@ -181,9 +183,9 @@ jpec2012.jp.		3600	IN	A	185.199.111.153
 jpec2012.jp.		3600	IN	A	185.199.110.153
 ```
 
-[スクリーンショット](./images/screenshot/sakura-zone-info.png)
-
 ## ワークフロー
+
+GraphCMSでコンテンツを更新したらWebhookをさくらのアプリに通知し、Github Actionsを発火させGithub Pagesがビルドされる
 
 ![work-flow](./images/diagram/work-flow.svg)
 
