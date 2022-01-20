@@ -129,6 +129,8 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
     * `Custom domain`: jpec2012.jp
     * `Enforce HTTPS`にチェック(すぐにできない場合はGithub側のチェックを待つ)
 
+[スクリーンショット]
+
 ![Github pages](./images/screenshot/github-pages.png)
 
 ##### DNS(さくらインターネット)側の設定
@@ -147,6 +149,8 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 | mail              | CNAME  | @              | -   |
 | ftp               | CNAME  | @              | -   |
 
+確認
+
 ```shell
 dig jpec2012.jp +noall +answer -t A
 ...
@@ -154,8 +158,6 @@ jpec2012.jp.		105	IN	A	49.212.235.158
 ```
 
 ##### 変更後
-
-![さくらインターネットドメインゾーン設定](./images/screenshot/sakura-zone-info.png)
 
 | エントリー        | タイプ | データ          | TTL |
 | ----------------- | ------ | --------------  | --- |
@@ -180,6 +182,10 @@ jpec2012.jp.		3600	IN	A	185.199.108.153
 jpec2012.jp.		3600	IN	A	185.199.111.153
 jpec2012.jp.		3600	IN	A	185.199.110.153
 ```
+
+[スクリーンショット]
+
+![さくらインターネットドメインゾーン設定](./images/screenshot/sakura-zone-info.png)
 
 ## ワークフロー
 
@@ -241,8 +247,9 @@ jpec2012.jp.		3600	IN	A	185.199.110.153
 ## Link
 
 * [Hugo Future Imperfect Slim \| Hugo Themes](https://themes.gohugo.io/hugo-future-imperfect-slim/)
-* [ModiiMedia/contentful\-hugo: Tool that pulls data from Contentful and turns it into markdown files for Hugo\. Can be used with other Static Site Generators, but has some Hugo specific features\.](https://github.com/ModiiMedia/contentful-hugo)
 * [Running static site builds with GitHub Actions and Contentful \| Contentful](https://www.contentful.com/blog/2020/06/01/running-static-site-builds-with-github-actions-and-contentful/)
+* [Managing a custom domain for your GitHub Pages site \- GitHub Docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+* [GitHub Pagesの独自ドメインHTTPS化対応 \- Qiita](https://qiita.com/shiruco/items/b504365371f18bfae7c8)
 * [Creating an image gallery with Hugo and Lightbox2 \- Christian Specht](https://christianspecht.de/2020/08/10/creating-an-image-gallery-with-hugo-and-lightbox2/)
 * [Hugo のレイアウトの仕組み \- Marbles Day](https://marbles.hatenablog.com/entry/2020/11/22/204751)
 * [タクソノミー関連のテンプレートを定義する \| まくまくHugo/Goノート](https://maku77.github.io/hugo/taxonomy/template.html)
@@ -250,5 +257,3 @@ jpec2012.jp.		3600	IN	A	185.199.110.153
 * [インスタグラム投稿の埋め込み方法と使用時の注意点 \| SEO研究所サクラサクラボ](https://www.sakurasaku-labo.jp/blogs/instagram-seo#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%82%B0%E3%83%A9%E3%83%A0%E6%8A%95%E7%A8%BF%E3%81%AE%E5%85%AC%E5%BC%8F%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E6%96%B9%E6%B3%95)
 * [Swiper\.jsの使い方「レスポンシブ等の具体例」とオプション解説](https://stand-4u.com/web/javascript/swiper.html)
 * [高機能なスライダー”Swiper”の紹介と使い方 \| Web\-saku](https://web-saku.net/swiper_introduction/)
-* [Managing a custom domain for your GitHub Pages site \- GitHub Docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-* [GitHub Pagesの独自ドメインHTTPS化対応 \- Qiita](https://qiita.com/shiruco/items/b504365371f18bfae7c8)
