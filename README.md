@@ -123,9 +123,67 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 
 <b id="f1">(1)</b> Github ActionsのWebhookではpayloadにevent_typeが必須だがGraphcmsでは設定できない(2021/5/6)  [↩](#a1)
 
+#### Github pages
+
+* ダッシュボード>`Settings`>`Pages`
+    * `Custom domain`: jpec2012.jp
+    * `Enforce HTTPS`にチェック(すぐにできない場合はGithub側のチェックを待つ)
+
+![Github pages](./images/screenshot/github-pages.png)
+
+##### DNS(さくらインターネット)側の設定
+
+サーバコントロールパネル ホーム>左サイドバードメイン/SSl>ネームサーバ設定>ゾーン>編集
+
+###### 変更前
+
+| エントリー        | タイプ | データ         | TTL |
+| ----------------- | ------ | -------------- | --- |
+| @                 | NS     | ns1.dns.ne.jp. | -   |
+| @                 | NS     | ns2.dns.ne.jp. | -   |
+| @                 | MX     | 10 @           | -   |
+| @                 | A      | 49.212.235.158 | -   |
+| www               | CNAME  | @              | -   |
+| mail              | CNAME  | @              | -   |
+| ftp               | CNAME  | @              | -   |
+
+```shell
+dig jpec2012.jp +noall +answer -t A
+...
+jpec2012.jp.		105	IN	A	49.212.235.158
+```
+
+##### 変更後
+
+![さくらインターネットドメインゾーン設定](./images/screenshot/sakura-zone-info.png)
+
+| エントリー        | タイプ | データ          | TTL |
+| ----------------- | ------ | --------------  | --- |
+| @                 | NS     | ns1.dns.ne.jp.  | -   |
+| @                 | NS     | ns2.dns.ne.jp.  | -   |
+| @                 | MX     | 10 @            | -   |
+| @                 | A      | 185.199.108.153 | -   |
+| @                 | A      | 185.199.109.153 | -   |
+| @                 | A      | 185.199.110.153 | -   |
+| @                 | A      | 185.199.111.153 | -   |
+| www               | CNAME  | @               | -   |
+| mail              | CNAME  | @               | -   |
+| ftp               | CNAME  | @               | -   |
+
+変更が反映するのにしばらく時間を要する。
+
+```shell
+dig jpec2012.jp +noall +answer -t A
+...
+jpec2012.jp.		3600	IN	A	185.199.109.153
+jpec2012.jp.		3600	IN	A	185.199.108.153
+jpec2012.jp.		3600	IN	A	185.199.111.153
+jpec2012.jp.		3600	IN	A	185.199.110.153
+```
+
 ## ワークフロー
 
-![work-flow](./work-flow.svg)
+![work-flow](./images/diagram/work-flow.svg)
 
 ## デザイン
 
@@ -192,3 +250,5 @@ GraphCMS側の設定(**Github Actionsに対応していないので中継サー�
 * [インスタグラム投稿の埋め込み方法と使用時の注意点 \| SEO研究所サクラサクラボ](https://www.sakurasaku-labo.jp/blogs/instagram-seo#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%82%B0%E3%83%A9%E3%83%A0%E6%8A%95%E7%A8%BF%E3%81%AE%E5%85%AC%E5%BC%8F%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E6%96%B9%E6%B3%95)
 * [Swiper\.jsの使い方「レスポンシブ等の具体例」とオプション解説](https://stand-4u.com/web/javascript/swiper.html)
 * [高機能なスライダー”Swiper”の紹介と使い方 \| Web\-saku](https://web-saku.net/swiper_introduction/)
+* [Managing a custom domain for your GitHub Pages site \- GitHub Docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+* [GitHub Pagesの独自ドメインHTTPS化対応 \- Qiita](https://qiita.com/shiruco/items/b504365371f18bfae7c8)
