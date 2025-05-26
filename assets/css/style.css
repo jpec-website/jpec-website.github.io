@@ -19,13 +19,6 @@
 ---------------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
 
-/*テンプレート専用cssファイルの読み込み
----------------------------------------------------------------------------*/
-@import url("animation.css");
-@import url("inview.css");
-
-
-
 
 
 /*全体の設定
