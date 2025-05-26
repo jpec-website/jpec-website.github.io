@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - nuxt3-jpec2025
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
