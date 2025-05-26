@@ -1,17 +1,26 @@
-*~
-*.bak
-*.orig
-*.pyc
-.env
-TODO.org
-public
-resources
-.vscode
-content/about
-content/news
-content/_index*.md
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
 node_modules
-__pycache__
-app/var.py
-workspace.code-workspace
-.hugo_build.lock
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+upload.js
