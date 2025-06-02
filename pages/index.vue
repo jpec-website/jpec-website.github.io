@@ -7,10 +7,10 @@
 			
 			<img :src="`${ slide }`"/>
 		</swiper-slide> -->
-			<swiper-slide><img src="~/assets/img/1.jpg" width="720px"></swiper-slide>
-			<swiper-slide><img src="~/assets/img/2.jpg" width="720px"></swiper-slide>
-			<swiper-slide><img src="~/assets/img/3.jpg" width="720px"></swiper-slide>
-			<swiper-slide><img src="~/assets/img/4.jpg" width="720px"></swiper-slide>
+			<swiper-slide><img src="~/assets/img/1.jpg" ></swiper-slide>
+			<swiper-slide><img src="~/assets/img/2.jpg" ></swiper-slide>
+			<swiper-slide><img src="~/assets/img/3.jpg" ></swiper-slide>
+			<swiper-slide><img src="~/assets/img/4.jpg" ></swiper-slide>
 		</swiper-container>
 	</ClientOnly>
 </div>
