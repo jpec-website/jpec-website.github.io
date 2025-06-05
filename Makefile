@@ -8,6 +8,3 @@ build:
 
 stage:
 	npx serve .output/public
-
-test:
-	node upload.js
